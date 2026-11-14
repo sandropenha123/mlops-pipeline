@@ -33,7 +33,8 @@ def predict(model: KMeans, scaler: StandardScaler, lat: float, lng: float) -> di
         (lat, lng),
         (centroid_original[0], centroid_original[1])
     ).km
-    return {
+    prediction = {
         "cluster": cluster,
-        "distance_km": round(float(distance_km), 4),
+        "distance_km": round(distance_km, 4)
     }
+    return prediction
